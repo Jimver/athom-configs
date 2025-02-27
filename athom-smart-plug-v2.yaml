@@ -141,7 +141,7 @@ select:
       - always_off
       - always_on
       - relay_restore_mode
-    initialOption: ${power_on_mode}
+    initial_option: ${power_on_mode}
     on_value:
       then:
         - lambda: |-
