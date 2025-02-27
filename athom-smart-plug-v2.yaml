@@ -8,6 +8,7 @@ substitutions:
   project_version: "v2.0.7"
   sensor_update_interval: "10s"
   relay_restore_mode: RESTORE_DEFAULT_ON
+  power_on_mode: relay_restore_mode
   hide_switch: "false"
   # Current Limit in Amps. AU Plug = 10. IL, BR, EU, UK, US Plug = 16.
   current_limit : "16"
@@ -137,9 +138,10 @@ select:
     optimistic: true
     icon: mdi:electric-switch
     options:
-      - Always Off
-      - Always On
-      - Restore Power Off State
+      - always_off
+      - always_on
+      - relay_restore_mode
+    initialOption: ${power_on_mode}
     on_value:
       then:
         - lambda: |-
